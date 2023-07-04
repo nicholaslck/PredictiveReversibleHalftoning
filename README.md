@@ -2,12 +2,14 @@
 
 ### [TVCG paper](https://ieeexplore.ieee.org/abstract/document/10131911) | [BibTex](#citation)
 
-## Overview
-
 > **Note**
 > This is the official implementation of the paper [Taming Reversible Halftoning via Predictive Luminance](https://ieeexplore.ieee.org/abstract/document/10131911).
 
+![Overview](images/overview.png)
+
 Traditional halftoning usually drops colors when dithering images with binary dots, which makes it difficult to recover the original color information. We proposed a novel halftoning technique that converts a color image into a binary halftone with full restorability to its original version. [Original reversible halftoning](https://github.com/MenghanXia/ReversibleHalftoning) technique suffers from the trade-off between the blue-noise quality and the restoration accuracy. We tackle the conflicts between the blue-noise quality and restoration accuracy via a predictor-embedded approach to offload predictable information from the network, which in our case is the luminance information resembling from the halftone pattern. Such an approach allows the network to gain more flexibility to produce halftones with better blue-noise quality without compromising the restoration quality.
+
+![Result compare with original reversible halftoning](images/compare.jpg)
 
 ## Setup
 
