@@ -23,7 +23,7 @@ pip install -r requirements.txt
 
 ## Prepare Dataset
 
-1. Go to http://host.robots.ox.ac.uk/pascal/VOC/voc2012/index.html#devkit and download the training/validation dataset
+1. Go to [VOC2012](http://host.robots.ox.ac.uk/pascal/VOC/voc2012/index.html#devkit) and download the training/validation dataset
 
 2. Unzip the dataset to `dataset/voc2012`
 
@@ -35,6 +35,12 @@ python genImageSet.py
 python genSpecialSet.py
 python getIndexList.py
 ```
+
+## Download the pretrained weight
+
+1. Download the [pretrained weight here](https://mycuhk-my.sharepoint.com/:u:/g/personal/1155049139_link_cuhk_edu_hk/EUBVrBgTmjNGgpPqDK5lnIcBikOPGwj1Qp4NNscvyH2eQA?e=S5Go0F) and put it under `checkpoints/`
+
+2. Unzip the archive file.
 
 ## Training & Inference
 
