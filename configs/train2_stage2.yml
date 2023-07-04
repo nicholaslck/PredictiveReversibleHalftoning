@@ -1,0 +1,44 @@
+run_name: stage_2
+variation: ours
+description: ' Fine tune InvHalf from stage_1 training. Using the Invhalf PRL from Xia.'
+training:
+  epochs: 50
+  save_per_epochs: 10
+  ycrcb_supervised: true
+model:
+  init_checkpoint: checkpoints/ours_stage1.pth.tar
+  reshalf_pretrained: 
+  invhalf_pretrained:
+  use_input_y: false
+  noise_weight: 0.3 # default 0.3
+optimizer:
+  type: Adam
+  option:
+    lr: 0.0001
+    weight_decay: 0
+lr_scheduler:
+  type: LinearLR
+  option:
+    start_factor: 1
+    end_factor: 0.01
+    total_iters: 50
+    verbose: true
+# optimizer:
+#   type: Adam
+#   option:
+#     lr: 0.0001
+#     weight_decay: 0
+# lr_scheduler:
+#   type: ReduceLROnPlateau
+#   option:
+#     factor: 0.5
+#     patience: 3
+#     threshold: 2.44140625e-08
+#     cooldown: 0
+dataset:
+  root_dir: dataset/HalftoneVOC2012
+  batch_size: 1
+  num_workers: 4
+loss_weights:
+  vgg_loss_weight: 0.000002
+  perceptual_loss_weight: 1.5

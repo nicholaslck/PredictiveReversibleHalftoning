@@ -1,0 +1,42 @@
+run_name: stage_1
+variation: ours2
+description: '
+  Train with restore loss on CrCb
+  Apply feature loss on y_pred
+  with concat dataset on plain color
+'
+training:
+  epochs: 100
+  ycrcb_supervised: true
+model:
+  init_checkpoint:
+  reshalf_pretrained: checkpoints/pretrained/reshalf_model_warm.pth.tar
+  invhalf_pretrained: output/train/PRLNet/b/2022-09-30_17:48:03/checkpoints/model_epoch127.pth.tar
+  use_input_y: false
+  noise_weight: 0.3 # default 0.3
+optimizer:
+  type: Adam
+  option:
+    lr: 0.0001
+    weight_decay: 0
+lr_scheduler:
+  type: ReduceLROnPlateau
+  option:
+    factor: 0.5
+    patience: 3
+    threshold: 2.44140625e-08
+    cooldown: 0
+dataset:
+  root_dir: dataset/HalftoneVOC2012
+  batch_size: 4
+  num_workers: 8
+feature_loss_pretrained: checkpoints/pretrained/inversehalf_model_best.pth.tar
+loss_weights:
+  quantize_loss_weight: 0.4
+  tone_loss_weight: 0.6
+  blueNoise_loss_weight: 0.9
+  restore_loss_weight: 1
+  feature_loss_weight: 0.3
+  vgg_loss_weight: 0
+  structure_loss_weight: 0
+# debug: true
