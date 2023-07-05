@@ -1,6 +1,6 @@
 # Taming Reversible Halftoning via Predictive Luminance
 
-### [TVCG paper](https://ieeexplore.ieee.org/abstract/document/10131911) | [BibTex](#citation)
+### [TVCG paper](https://ieeexplore.ieee.org/abstract/document/10131911) | [Project Site](https://nicholaslck.github.io/predreshalf/) | [BibTex](#citation)
 
 > **Note**
 > This is the official implementation of the paper [Taming Reversible Halftoning via Predictive Luminance](https://ieeexplore.ieee.org/abstract/document/10131911).
