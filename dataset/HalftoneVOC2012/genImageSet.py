@@ -1,3 +1,4 @@
+import cv2
 import mmcv
 import os
 import numpy as np
@@ -6,9 +7,12 @@ import argparse
 import subprocess
 
 # Path to original VOC2012 dataset
-input_dir = "dataset/voc2012/VOCdevkit/VOC2012/JPEGImages"
+input_dir = "/research/d4/gds/cklau21/Datasets/voc2012/VOCdevkit/VOC2012/JPEGImages"
 
-output_root_dir = 'HalftoneVOC2012_ov'
+if not os.path.exists(input_dir):
+  raise RuntimeError(f"Cannot find input directory {input_dir}, please update the variable input_dir to point to the JPEGImages directory of VOC2012")
+
+output_root_dir = 'HalftoneVOC2012'
 input_files = [ f for f in os.listdir(input_dir) if os.path.isfile(os.path.join(input_dir, f)) ]
 
 training_set_boundary = 13758
@@ -27,7 +31,7 @@ if not os.path.exists(os.path.join(os.curdir, output_root_dir)):
 
 def dither_and_save(i):
   input_file = input_files[i]
-  raw_input_img = mmcv.imread(os.path.join(input_dir, input_file), 'color')
+  raw_input_img = cv2.imread(os.path.join(input_dir, input_file), cv2.IMREAD_COLOR)
 
   # Crop and resize image into 256x256
   height, width, channel = raw_input_img.shape

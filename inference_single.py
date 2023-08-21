@@ -2,7 +2,6 @@ from datetime import datetime
 import argparse
 import os
 import os.path as path
-from logging import info as log
 from torchvision.transforms import GaussianBlur
 
 import cv2

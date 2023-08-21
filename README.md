@@ -56,9 +56,9 @@ python train2_stage1.py -r <path to checkpoint>
 
 # Inference
 python inference_single.py \
-    --input <path to image (.png)> \
-    --out_dir <output directory> \
-    --method 'ours'
+--input [path to image (.png)] \
+--out_dir [output directory] \
+--method 'ours'
 ```
 
 ## Citation

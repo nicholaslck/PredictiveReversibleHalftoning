@@ -7,7 +7,7 @@ import math
 import argparse
 import subprocess
 
-output_root_dir = 'special_ov'
+output_root_dir = 'special'
 
 max_set = 13758 + 3367
 training_set_boundary = 13758

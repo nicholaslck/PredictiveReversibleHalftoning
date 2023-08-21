@@ -11,7 +11,7 @@ training:
 model:
   init_checkpoint:
   reshalf_pretrained: checkpoints/pretrained/reshalf_model_warm.pth.tar
-  invhalf_pretrained: output/train/PRLNet/b/2022-09-30_17:48:03/checkpoints/model_epoch127.pth.tar
+  invhalf_pretrained: checkpoints/pretrained/prlnet_epoch127.tar
   use_input_y: false
   noise_weight: 0.3 # default 0.3
 optimizer:

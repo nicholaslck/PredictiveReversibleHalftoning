@@ -1,0 +1,10 @@
+**/.DS_Store
+**/._.DS_Store
+checkpoints/
+**/__pycache__/**
+
+
+# nicholas local dir
+**/assets/**
+**/out_single/**
+dataset/HalftoneVOC2012/tmp/*
