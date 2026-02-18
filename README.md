@@ -38,9 +38,18 @@ python getIndexList.py
 
 ## Download the pretrained weight
 
-1. Download the [pretrained weight here](https://mycuhk-my.sharepoint.com/:u:/g/personal/1155049139_link_cuhk_edu_hk/ESPaBx_14LFFv0x18fVU0igBGamfNaxpGuH4faLs7iMGmw?e=ZL4Pgr) and put it under `checkpoints/`
+1. Download the [pretrained weight here](https://huggingface.co/nicholaslck/PredictiveReversibleHalftoning)
 
-2. Unzip the archive file.
+2. Unarchive each of the checkpoint file `tar -xvf [path_to_checkpoint_file].tar` TODO: file structure
+
+3. place the checkpoints into `checkpoints/` folder
+```bash
+checkpoints/
+├──pretrained/
+│    └──...
+├──ours_stage1.pth
+└──ours_stage2.pth
+```
 
 ## Training & Inference
 
